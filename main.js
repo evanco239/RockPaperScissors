@@ -22,8 +22,8 @@ function startNewGame(e){
     yourScore = 0;
     computerScore = 0;
     handsPlayed = 0;
-    yourPlay.src = '';
-    computerPlay.src = '';
+    yourPlay.src = ' ';
+    computerPlay.src = ' ';
     playGame();
 }
 
