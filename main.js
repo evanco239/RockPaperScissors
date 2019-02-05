@@ -12,6 +12,7 @@ gameButton.addEventListener('click', buttonPressed);
 var yourScore = 0;
 var computerScore = 0;
 var handsPlayed = 0;
+var computerPlayHand;
 
 playGame();
 
@@ -46,34 +47,41 @@ function buttonPressed(e){
         computerCanvasScore.textContent = "Computer Wins: " + computerScore;
         yourCanvasScore.textContent = "Your Wins: " + yourScore;
     }
-    else{
-        if(e.target.id == 'rock'){
+    else if(e.target.id == 'rock'){
             yourPlay.src = 'rock.png';
+            computerHand();
         } 
-        else if(e.target.id == 'paper'){
+    else if(e.target.id == 'paper'){
             yourPlay.src = 'paper.png';
+            computerHand();
         } 
-        else if(e.target.id == 'scissors'){
+    else if(e.target.id == 'scissors'){
             yourPlay.src = 'scissors.png';
+            computerHand();
         }
 
-        computerHand();
+        
 
-        if(e.target.id == 'rock' && computerHand() =='scissors' || 
-           e.target.id == 'paper' && computerHand() =='rock' ||
-           e.target.id == 'scissors' && computerHand() =='paper'){
+        if(e.target.id === 'rock' && computerPlayHand ==='scissors' || 
+           e.target.id === 'paper' && computerPlayHand ==='rock' ||
+           e.target.id === 'scissors' && computerPlayHand ==='paper'){
             yourScore++;
+            computerCanvasScore.textContent = "Computer Wins: " + computerScore;
+            yourCanvasScore.textContent = "Your Wins: " + yourScore;
         }
-        else if(e.target.id == 'scissors' && computerHand() =='rock' || 
-                e.target.id == 'rock' && computerHand() =='paper' ||
-                e.target.id == 'paper' && computerHand() =='scissors'){
+        else if(e.target.id === 'scissors' && computerPlayHand ==='rock' || 
+                e.target.id === 'rock' && computerPlayHand ==='paper' ||
+                e.target.id === 'paper' && computerPlayHand ==='scissors'){
                 computerScore++;
+                computerCanvasScore.textContent = "Computer Wins: " + computerScore;
+                yourCanvasScore.textContent = "Your Wins: " + yourScore;
         }
-
-        computerCanvasScore.textContent = "Computer Wins: " + computerScore;
-        yourCanvasScore.textContent = "Your Wins: " + yourScore;
+        else{
+            computerCanvasScore.textContent = "Computer Wins: " + computerScore;
+            yourCanvasScore.textContent = "Your Wins: " + yourScore;
+        }
     }   
-}
+
 
 //computer hand function
 function computerHand(){
@@ -82,16 +90,16 @@ function computerHand(){
     
     if(computerHand == 'rock'){
         computerPlay.src = 'rock.png';
-        return 'rock';
+        return computerPlayHand = computerHand;
         
     } 
     else if(computerHand == 'paper'){
         computerPlay.src = 'paper.png';
-        return 'paper';
+        return computerPlayHand = computerHand;
     }
     else if(computerHand == 'scissors'){
         computerPlay.src = 'scissors.png';
-        return 'scissors';
+        return computerPlayHand = computerHand;
     } 
 }
 
