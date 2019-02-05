@@ -1,0 +1,45 @@
+.gameCanvas{
+    width:320px;
+    height:260px; 
+    background:#f4f4f4; 
+    max-width: 320px;
+    position: relative;
+    border-radius: 10px;
+    
+}
+
+#computerPicture{
+    width: 60px; 
+    height: 80px;
+    position: relative;
+    top: 70px;
+    left: -60px;
+}
+
+#yourPicture{
+    width: 60px; 
+    height: 80px;
+    position: relative;
+    top: 70px;
+    left: 60px;
+}
+
+#computer-canvas-score{
+    position: relative;
+    top: 15px;
+    left: -70px;
+}
+
+#your-canvas-score{
+    position: relative;
+    top: -9px;
+    left: 70px;
+}
+
+.btn:hover{
+    box-shadow: 2px 2px 2px 2px rgb(201, 207, 241);
+}
+
+a:hover{
+    color: rgb(97, 97, 253) !important;
+}
